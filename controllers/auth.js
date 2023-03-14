@@ -4,6 +4,10 @@ const { BadRequestError, UnauthenticatedError } = require("../errors");
 const bcrypt = require("bcrypt");
 // const passwordGenerator = require("password-generator"); // generated fakePassword
 
+const getUser = (req, res) => {
+  res.send("hi here");
+};
+
 // REGISTER
 const register = async (req, res) => {
   const { email } = req.body;
@@ -52,7 +56,7 @@ const login = async (req, res) => {
   });
 };
 
-module.exports = { register, login };
+module.exports = { register, login, getUser };
 
 // we can hash the password in our control or we use the mongoose middleware for that in the model
 // const register = async (req, res) => {
